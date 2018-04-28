@@ -99,7 +99,9 @@ $(function(){
 		player.load();
 	}
 	
-
+	if (winWidth < 768) {
+		player.setAttribute('controls', 'controls');
+	}
 
 
 
