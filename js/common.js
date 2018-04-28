@@ -1,6 +1,5 @@
 
 
-
 // узнаем ширину скроллбара
 var clientWidth      = $(window).innerWidth(),
 		winWidth         = $(window).outerWidth(),
@@ -101,29 +100,19 @@ $(function(){
 	}
 	
 
-	if (winWidth < 768){
 
-				player.onready = function(){
-					this.play();
-				}
 
-	}else {
+
+	$(window).on('scroll', function(){
+		var fromTop   = $(window).scrollTop();
 		
-		$(window).scroll( function(){
-			var fromTop   = $(window).scrollTop();
-			
+		toplineStyleControl(fromTop);
 
-
-			toplineStyleControl(fromTop);
-
-			if ( videoScrollTop - fromTop  <= startVideoRange && videoScrollTop - fromTop > 0 )
-			{
-				startVideo();
-			}
-		});
-	}
-
-
+		if ( videoScrollTop - fromTop  <= startVideoRange && videoScrollTop - fromTop > 0 )
+		{
+			startVideo();
+		}
+	});
 
 
 	
