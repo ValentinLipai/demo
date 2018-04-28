@@ -1081,8 +1081,10 @@ body{min-width:320px;position:relative;font-family:GothamPro,sans-serif;color:#0
 }
 @media only screen and (max-width:480px){
 .taxonomy-slider__arrow{width:20px}
-.taxonomy-slider__arrow-right{right:20px;height:50px;max-width:30px}
-.taxonomy-slider__arrow-left{left:40px;height:50px;max-width:30px}
+.taxonomy-slider__arrow-right{right:20px}
+.taxonomy-slider__arrow-right img{height:50px;max-width:30px}
+.taxonomy-slider__arrow-left{left:40px}
+.taxonomy-slider__arrow-left img{height:50px;max-width:30px}
 .topline-logo__img{width:70px}
 .topline-mobile-phone__link{font-size:2rem;padding-left:0}
 .header-content__heading{font-size:2.2rem}
