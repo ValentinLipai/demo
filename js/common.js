@@ -1,5 +1,21 @@
+
+
+// узнаем ширину скроллбара
+var clientWidth      = $(window).innerWidth(),
+		winWidth         = $(window).outerWidth(),
+		scrollBarWidth   = parseFloat( winWidth - clientWidth),
+		toplineHeight    = $('.topline').height();
+		// body.css('padding-right', scrollBarWidth).css('overflow', 'hidden');  // Пример 
+// управление модальными окнами
+
+
+
+$(function(){
+	$('.preorder').parallax({imageSrc: '../img/preOrder/preOrder-bg.jpg'});
+});
 $(function(){
 	var taxonomySlider = $('.taxonomy-slider');
+	var factsSlider    = $('.facts-items-wrapper');
 
 	if (taxonomySlider.length){
 		taxonomySlider.slick({
@@ -9,9 +25,37 @@ $(function(){
 			focusOnSelect: true,
 			initialSlide: 4,
 			prevArrow: '.taxonomy-slider__arrow-left',
-			nextArrow: '.taxonomy-slider__arrow-right'
+			nextArrow: '.taxonomy-slider__arrow-right',
+			responsive: 
+				[
+			    {
+			      breakpoint: 768,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1,
+			        infinite: true,
+			        centerMode: false,
+			        centerPadding: '0px',
+			        focusOnSelect: false,
+			        initialSlide: 1
+			      }
+			    }
+			  ]
 		});
 	}
+
+	if ( factsSlider.length && winWidth < 640){
+		factsSlider.slick({
+			infinite: true,
+			dots: true,
+			arrows: false,
+			autoplay: true,
+			speed: 1000
+		});
+	}
+
+
+
 });
 
 
@@ -101,6 +145,9 @@ function headerBgSlider(){
 	setInterval(showNextSlide, changeTime);
 };
 
+
+
+
 $(document).ready(function() {
 				// headerSliderWrapper.find('.header-bg__img:first').addClass('active').fadeIn();
 				headerBgSlider();
@@ -141,23 +188,33 @@ $(function() {
 
 			// popup start
 			var popupForm                 = $('.popup-form-block'),
-			popupTextBlocks           = $('.popup-text-blocks'),
-			popupCloseBtn             = $('.close-popup'),
-			body                      = $('body');
+					popupFormBtn              = $('#popup-form-block-btn'),
+					popupCloseBtn             = $('.close-popup'),
+					body                      = $('body'),
+					openPopupFormBtns         = $('.open-popup-form'),
+					popupformSubject         	= $('#popup-form-subject');
+					formSubject               = $('#form-subject');
 
-		// узнаем ширину скроллбара
-		var clientWidth      = $(window).innerWidth(),
-		winWidth         = $(window).outerWidth(),
-		scrollBarWidth   = parseFloat( winWidth - clientWidth);
-				// body.css('padding-right', scrollBarWidth).css('overflow', 'hidden');  // Пример 
-		// управление модальными окнами
 
-		popupCloseBtn.click(function(){
-			popupForm.fadeOut(300);
-			setTimeout(function(){
-				body.css('padding-right', '0').css('overflow-x', 'hidden').css('overflow-y', 'auto');
-			}, 300);
-		});
+			popupCloseBtn.click(function(){
+				popupForm.fadeOut(300);
+				setTimeout(function(){
+					body.css('padding-right', '0').css('overflow-x', 'hidden').css('overflow-y', 'auto');
+					$('.topline').css('padding-right', 0);
+				}, 300);
+			});
+
+			openPopupFormBtns.click(function(){
+				var subject = $(this).data('form-subject');
+				var btnText = $(this).text();
+				popupformSubject.val(subject);
+				popupFormBtn.text(btnText);
+				popupForm.fadeIn(300);
+				body.css('padding-right', scrollBarWidth).css('overflow', 'hidden');
+				$('.topline').css('padding-right', scrollBarWidth);
+			});
+
+
 
 
 
@@ -180,7 +237,7 @@ $(function() {
 				top = $(id).offset().top;
 				
 				//анимируем переход на расстояние - top за 1500 мс
-				$('body,html').animate({scrollTop: top}, 1500);
+				$('body,html').animate({scrollTop: top - toplineHeight}, 1500);
 			});
 
 
@@ -205,3 +262,101 @@ $(function() {
 
 
 		});
+
+var mapCenter;
+var markerCenter;
+var iconSize     = [90, 130];
+var iconoOffset  = [-45, -140];
+
+mapCenter = [53.905867, 27.765155];
+markerCenter = [53.904565, 27.699570];
+
+
+switch(true){
+	case winWidth < 768:
+		mapCenter = markerCenter;
+		iconSize     = [60, 90];
+		iconoOffset  = [-30, -95];
+		break;
+
+	case winWidth < 1200:
+		mapCenter = [53.905481, 27.734149];
+		break;
+	
+	case winWidth < 1400:
+		mapCenter = [53.906089, 27.756293];
+		iconSize     = [80, 110];
+		iconoOffset  = [-40, -120];
+		break;
+
+	default:
+		mapCenter = [53.905867, 27.765155];
+		markerCenter = [53.904565, 27.699570];
+		iconSize     = [90, 130];
+		iconoOffset  = [-45, -140];
+}
+
+
+ymaps.ready(function() {
+    var myMap = new ymaps.Map('map', {
+            center: mapCenter,
+            zoom: 13
+        }, {
+            searchControlProvider: 'yandex#search'
+        }),
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+        myPlacemark = new ymaps.Placemark(markerCenter, {
+            hintContent: 'Silver Pony',
+            balloonContent: 'г. Минск, ул. Казинца 11а'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/map/marker.png',
+            iconImageSize: iconSize,
+            iconImageOffset: iconoOffset
+        })
+    myMap.geoObjects.add(myPlacemark);
+    myMap.behaviors.disable('scrollZoom');
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        myMap.behaviors.disable('drag');
+    }
+});
+
+
+
+var wow = new WOW(
+  {
+    boxClass:     'wow',      // animated element css class (default is wow)
+    animateClass: 'animated', // animation css class (default is animated)
+    offset:       140,          // distance to the element when triggering the animation (default is 0)
+    mobile:       true,       // trigger animations on mobile devices (default is true)
+    live:         true,       // act on asynchronously loaded content (default is true)
+    callback:     function(box) {
+      // the callback is fired every time an animation is started
+      // the argument that is passed in is the DOM node being animated
+    },
+    scrollContainer: null,    // optional scroll container selector, otherwise use window,
+    resetAnimation: true,     // reset animation on end (default is true)
+  }
+);
+wow.init();
+
+
+$(document).ready(function(){
+
+	var mMenu             = $('.mobile-menu__wrapper'),
+			ham               = $('.topline-mobile-hamburger'),
+			mMenuScrollLink		= $('.mobile-menu__link.scroll-link');
+
+
+	ham.click(function(){
+		mMenu.toggleClass('open');
+		ham.toggleClass('open');
+	});
+
+	mMenuScrollLink.click(function(){
+		mMenu.toggleClass('open');
+		ham.toggleClass('open');
+	});
+
+
+});

@@ -30,10 +30,42 @@
 
 <body>
 
+	
+
+
 	<!-- TOPLINE START -->
 	<div class="topline ">
+		<div class="mobile-menu__wrapper">
+		<div class="mobile-menu">
+			<ul class="mobile-menu__list">                                        
+				<li class="mobile-menu__item"><a href="#top" class="mobile-menu__link scroll-link">Главная</a></li>
+				<li class="mobile-menu__item"><a href="#facts" class="mobile-menu__link scroll-link">О компании</a></li>
+				<li class="mobile-menu__item"><a href="#taxonomy" class="mobile-menu__link scroll-link">Коллекции</a></li>
+				<li class="mobile-menu__item"><a href="#contacts" class="mobile-menu__link scroll-link">Контакты</a></li>
+				<li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Опт</a></li>
+			</ul>
+			<ul class="mobile-menu-sub__list">
+				<li class="mobile-menu-sub__phone">
+					<a href="tel:+375296837500" class="topline-menu__link">+375 (29) 683 75 00</a>
+				</li>
+				<li class="mobile-menu-sub__phone">
+					<button class="topline-backCall gold-btn open-popup-form" data-form-subject="Заказать звонок">заказать звонок</button>
+				</li>
+			</ul>
+		</div>
+	</div>
 		<div class="container">
 			<div class="my-row">
+				<div class="topline-mobile-hamburger-wrapper">
+					<div class="topline-mobile-hamburger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div class="topline-mobile-phone__wrapper">
+					<a href="tel:+375296837500" class="topline-menu__link topline-mobile-phone__link">+375 (29) 683 75 00</a>
+				</div>
 				<div class="topline-logo__wrapper">
 					<a href="#top" class="topline-logo__link scroll-link"><img src="img/header/logo.png" alt="Каляски Junama" class="topline-logo__img"></a>
 				</div>
@@ -48,7 +80,7 @@
 					</ul>
 				</nav>
 				<div class="topline-backCall__wrapper">
-					<button class="topline-backCall gold-btn">заказать звонок</button>
+					<button class="topline-backCall gold-btn open-popup-form" data-form-subject="Заказать звонок">заказать звонок</button>
 				</div>
 			</div>
 		</div>
@@ -75,25 +107,25 @@
 		<div class="container">
 			<h2 class="section-heading facts__heading">Несколько фактов о бренде junama</h2>
 			<div class="flwrap facts-items-wrapper">
-				<div class="facts-item">
+				<div class="facts-item wow fadeInLeft" data-wow-delay="0.20s">
 					<div class="facts-item__icon-wrapper"><img src="img/facts/icon-1.png" alt="Каляски Junama" class="facts-item__icon"></div>
 					<div class="facts-item__text-wrapper">
 						<p class="facts-item__text">Компания сосредоточена на производстве эстетических детских колясок премиум сегмента</p>
 					</div>
 				</div>
-				<div class="facts-item">
+				<div class="facts-item wow fadeInRight" data-wow-delay="0.20s">
 					<div class="facts-item__icon-wrapper"><img src="img/facts/icon-2.png" alt="Каляски Junama" class="facts-item__icon"></div>
 					<div class="facts-item__text-wrapper">
 						<p class="facts-item__text">Над созданием моделей трудятся Европейские кутюрье моды доводя до совершенства каждую деталь. Коляски Junama - настоящее произведение искусства</p>
 					</div>
 				</div>
-				<div class="facts-item">
+				<div class="facts-item wow fadeInLeft" data-wow-delay="0.40s">
 					<div class="facts-item__icon-wrapper"><img src="img/facts/icon-3.png" alt="Каляски Junama" class="facts-item__icon"></div>
 					<div class="facts-item__text-wrapper">
 						<p class="facts-item__text">В производстве используются только лучшие экологически чистые ткани и материалы</p>
 					</div>
 				</div>
-				<div class="facts-item">
+				<div class="facts-item wow fadeInRight" data-wow-delay="0.40s">
 					<div class="facts-item__icon-wrapper"><img src="img/facts/icon-4.png" alt="Каляски Junama" class="facts-item__icon"></div>
 					<div class="facts-item__text-wrapper">
 						<p class="facts-item__text">Каждая коляска проходит тщательный контроль качества, что позволяет добиться 100% высокого результата, который так необходим вашему ребенку</p>
@@ -125,7 +157,7 @@
 	<section class="taxonomy" id="taxonomy">
 		<div class="taxonomy-slider__wrapper">
 			<div class="taxonomy-slider">
-				<div class="taxonomy-slider__item">
+				<div class="taxonomy-slider__item wow fadeIn" data-offset="200">
 					<img src="img/taxonomy/slide-1.jpg" alt="Каляски Junama" class="taxonomy-slider__item-image">
 					<div class="taxonomy-slider__item-content">
 						<h3 class="taxonomy-slider__item-heading">Модель Enzo</h3>
@@ -134,7 +166,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="taxonomy-slider__item">
+				<div class="taxonomy-slider__item wow fadeIn" data-offset="200">
 					<img src="img/taxonomy/slide-2.jpg" alt="Каляски Junama" class="taxonomy-slider__item-image">
 					<div class="taxonomy-slider__item-content">
 						<h3 class="taxonomy-slider__item-heading">Модель City</h3>
@@ -143,7 +175,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="taxonomy-slider__item">
+				<div class="taxonomy-slider__item wow fadeIn" data-offset="200">
 					<img src="img/taxonomy/slide-3.jpg" alt="Каляски Junama" class="taxonomy-slider__item-image">
 					<div class="taxonomy-slider__item-content">
 						<h3 class="taxonomy-slider__item-heading">Модель Diamond</h3>
@@ -152,7 +184,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="taxonomy-slider__item">
+				<div class="taxonomy-slider__item wow fadeIn" data-offset="200">
 					<img src="img/taxonomy/slide-4.jpg" alt="Каляски Junama" class="taxonomy-slider__item-image">
 					<div class="taxonomy-slider__item-content">
 						<h3 class="taxonomy-slider__item-heading">Модель Madena</h3>
@@ -161,7 +193,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="taxonomy-slider__item">
+				<div class="taxonomy-slider__item wow fadeIn" data-offset="200">
 					<img src="img/taxonomy/slide-1.jpg" alt="Каляски Junama" class="taxonomy-slider__item-image">
 					<div class="taxonomy-slider__item-content">
 						<h3 class="taxonomy-slider__item-heading">Модель Enzo</h3>
@@ -170,7 +202,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="taxonomy-slider__item">
+				<div class="taxonomy-slider__item wow fadeIn" data-offset="200">
 					<img src="img/taxonomy/slide-2.jpg" alt="Каляски Junama" class="taxonomy-slider__item-image">
 					<div class="taxonomy-slider__item-content">
 						<h3 class="taxonomy-slider__item-heading">Модель City</h3>
@@ -179,7 +211,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="taxonomy-slider__item">
+				<div class="taxonomy-slider__item wow fadeIn" data-offset="200">
 					<img src="img/taxonomy/slide-3.jpg" alt="Каляски Junama" class="taxonomy-slider__item-image">
 					<div class="taxonomy-slider__item-content">
 						<h3 class="taxonomy-slider__item-heading">Модель Diamond</h3>
@@ -188,7 +220,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="taxonomy-slider__item">
+				<div class="taxonomy-slider__item wow fadeIn" data-offset="200">
 					<img src="img/taxonomy/slide-4.jpg" alt="Каляски Junama" class="taxonomy-slider__item-image">
 					<div class="taxonomy-slider__item-content">
 						<h3 class="taxonomy-slider__item-heading">Модель Madena</h3>
@@ -205,26 +237,92 @@
 	<!-- TAXONOMY END -->
 
 
+	<!-- PREOREDER START -->
+	<section class="preorder">
+		<div class="preorder-image__wrapper">
+			<img src="img/preOrder/bottom-image.png" alt="" class="preorder-image">
+		</div>
+		<div class="preorder__content">
+			<div class="container">
+				<div class="preorder__content-wrapper wow flash" data-wow-delay="0.5s">
+					<h2 class="preorder__heading">оформите предзаказ <span>на коляску для двойни</span></h2>
+					<div class="preorder__btn-wrapper">
+						<button class="preorder__btn open-popup-form wow tada" data-wow-delay="4s"  data-form-subject="Узнать подробнее о предзаказе на каляску для двоих">узнать подробнее</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- PREOREDER START -->
 
+	<!-- CONTACTS START -->
+	<section class="contacts" id="contacts">
+		<div class="contacts__wrapper">
+			<div class="contacts-table">
+				<h2 class="contacts-table__heading">контакты</h2>
+				<div class="contacts-table__content">
+					<p class="contacts-table__text">Наш офис со складом <span class="xs-db">находятся по адресу:</span> <span class="mob-db">г. Минск ул. Липковская, д.16.</span></p>
+					<p class="contacts-table__text">Вы можете приехать и посмотреть <span class="mob-db">коляски Junama вживую.</span></p>
+					<p class="contacts-table__text">Или  оформить <span class="contacts-gold">Бесплатную</span> <span class="mob-db">доставку в любой город Беларуси.</span></p>
+					<div class="contacts-table__time"><span class="contacts-table__time-heading">Время работы склада:</span> <span>Пн-Пт: с 9.00 до 19.00</span></div>
+					<div class="contacts-table__links"><span class="contacts-table__links-heading">Телефоны для связи:</span> 
+						<a href="tel:+375296837500">+375 (29) 683 75 00,</a>
+						<a href="tel:+375333837500">+375 (33) 383 75 00</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contacts__map" id="map"></div>
+	</section>
+	<!-- CONTACTS END -->
+
+	<!-- formSection START -->
+	<section class="formSection">
+		<div class="container">
+			<div class="formSection-wrapper">
+				<div class="formSection-content">
+					<h2 class="formSection__heading">Остались вопросы?</h2>
+					<div class="formSection__text">Заполните форму <span>и мы перезвоним вам</span></div>
+				</div>
+				<div class="formSection-form__wrapper">
+					<form action="mail.php" method="post" id="sectionform" class="formSection-form">
+						<input type="text" name="name" placeholder="Ваше имя" class="formSection-form__input form-input">
+						<input type="text" name="tel" placeholder="Введите телефон" class="formSection-form__input form-input" required>
+						<button type="submit" form="sectionform" class="formSection-form__btn sectionForm-form__btn">отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- formSection END -->
+
+	<!-- FOOTER START -->
+	<footer class="footer">
+		<div class="footer-wrapper">
+			<a href="javascript:void(0)" class="footer-policy-link">Политика конфиденциальности</a>
+			<div class="footer-dev__wrapper">
+				<span class="footer__dev">Разработка и продвижение <span class="xs-db">веб-студия <a href="#" class="footer-dev__link">KiwiMedia</a></span></span>
+			</div>
+		</div>
+	</footer>
+	<!-- FOOTER END -->
 
 
 	<!-- popup more info start -->
 	<div class="popup popup-form-block">
-		<div class="popup-overlay close-popup"  id="popup-form__overlay"></div>
+		<div class="popup-overlay close-popup" id="popup-form__overlay"></div>
 		<div class="popup-form__container">
-			<img src="img/colse-popup.png" alt="Eyelash Booster" class="popup-close-btn close-popup" id="popup-form__close-btn">
+			<span class="popup-close-btn close-popup">×</span>
 			<form action="mail.php" method="post" id="popup-form" class="main-form">
 				<p class="popup-form__heading">Заполните форму</p>
-				<input type="hidden" name="form-subject">
-				<div class="main-form__input-wrap">
-					<span class="main-form__input-placeholder">Ваше имя</span>
-					<input type="text" class="main-form__input" name="name">
+				<input type="hidden" name="form-subject" id="popup-form-subject">
+				<div class="popup-form__input-wrap">
+					<input type="text" name="name" placeholder="Ваше имя" class="form-input popup-form-block-input">
 				</div>
-				<div class="main-form__input-wrap">
-					<span class="main-form__input-placeholder">Номер телефона</span>
-					<input type="text" class="main-form__input" name="tel" required>
+				<div class="popup-form__input-wrap">
+					<input type="text" name="tel" placeholder="Введите телефон" class="form-input popup-form-block-input" required>
 				</div>
-				<button type="submit" form="popup-form" class="btn main-form__btn">Заказать Eyelash Booster</button>
+				<button type="submit" form="popup-form" id="popup-form-block-btn" class="btn popup-form-block-btn popup-form__btn">Заказать звонок</button>
 			</form>
 		</div>
 	</div>
@@ -235,6 +333,7 @@
 
 
 	<link rel="stylesheet" href="css/main.min.css">
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src="js/scripts.min.js"></script>
 
 </body>
