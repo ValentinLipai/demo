@@ -33,8 +33,11 @@ $(function(){
 			      settings: {
 			        slidesToShow: 1,
 			        slidesToScroll: 1,
+			        infinite: true,
 			        centerMode: false,
-			        focusOnSelect: false
+			        centerPadding: '0px',
+			        focusOnSelect: false,
+			        initialSlide: 1
 			      }
 			    }
 			  ]
@@ -54,7 +57,7 @@ $(function(){
 
 
 });
-
+//
 
 $(function(){
 	var windowHeight = $(window).height();
@@ -186,17 +189,20 @@ $(function() {
 
 
 			// popup start
-			var popupForm                 = $('.popup-form-block'),
+			var popupPolicy               = $('.popup-policy'),
+					popupAll                  = $('.popup'),
+					popupForm                 = $('.popup-form-block'),
 					popupFormBtn              = $('#popup-form-block-btn'),
 					popupCloseBtn             = $('.close-popup'),
 					body                      = $('body'),
 					openPopupFormBtns         = $('.open-popup-form'),
-					popupformSubject         	= $('#popup-form-subject');
+					openPopupPolicyBtn        = $('.footer-policy-link'),
+					popupformSubject         	= $('#popup-form-subject'),
 					formSubject               = $('#form-subject');
 
 
 			popupCloseBtn.click(function(){
-				popupForm.fadeOut(300);
+				popupAll.fadeOut(300);
 				setTimeout(function(){
 					body.css('padding-right', '0').css('overflow-x', 'hidden').css('overflow-y', 'auto');
 					$('.topline').css('padding-right', 0);
@@ -209,6 +215,12 @@ $(function() {
 				popupformSubject.val(subject);
 				popupFormBtn.text(btnText);
 				popupForm.fadeIn(300);
+				body.css('padding-right', scrollBarWidth).css('overflow', 'hidden');
+				$('.topline').css('padding-right', scrollBarWidth);
+			});
+
+			openPopupPolicyBtn.click(function(){
+				popupPolicy.fadeIn(300);
 				body.css('padding-right', scrollBarWidth).css('overflow', 'hidden');
 				$('.topline').css('padding-right', scrollBarWidth);
 			});
