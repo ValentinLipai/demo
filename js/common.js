@@ -108,6 +108,10 @@ $(function(){
 		alert(videoScrollTop);
 		var fromTop   = $(window).scrollTop();
 		
+		if (winWidth < 768){
+			fromTop += 200; 
+		}
+
 		toplineStyleControl(fromTop);
 		alert(videoScrollTop + ' + ' + fromTop);
 
