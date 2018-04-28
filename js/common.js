@@ -101,23 +101,29 @@ $(function(){
 	}
 	
 
+	if (winWidth < 768){
 
+				player.onready = function(){
+					this.play();
+				}
 
-
-	$(window).scroll( function(){
-		var fromTop   = $(window).scrollTop();
+	}else {
 		
-		if (winWidth < 768){
-			fromTop += 200; 
-		}
+		$(window).scroll( function(){
+			var fromTop   = $(window).scrollTop();
+			
 
-		toplineStyleControl(fromTop);
 
-		if ( videoScrollTop - fromTop  <= startVideoRange && videoScrollTop - fromTop > 0 )
-		{
-			startVideo();
-		}
-	});
+			toplineStyleControl(fromTop);
+
+			if ( videoScrollTop - fromTop  <= startVideoRange && videoScrollTop - fromTop > 0 )
+			{
+				startVideo();
+			}
+		});
+	}
+
+
 
 
 	
