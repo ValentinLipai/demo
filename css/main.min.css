@@ -1056,8 +1056,8 @@ body{min-width:320px;position:relative;font-family:GothamPro,sans-serif;color:#0
 .facts .slick-dots li button{width:10px;height:10px;-webkit-border-radius:50%;border-radius:50%;background-color:#000;margin:0 10px}
 .facts .slick-dots li button:after{display:none}
 .facts .slick-dots li button{width:12px;height:12px}
-.popup-policy__container{min-width:90%;padding:20px}
-.popup-policy-content__heading{font-size:1.8rem}
+.popup-policy__container{min-width:90%;padding:10px 20px 20px}
+.popup-policy-content__heading{font-size:1.8rem;margin-bottom:15px}
 .popup-policy-content__text{font-size:1.4rem}
 }
 @media only screen and (max-width:639px){
