@@ -105,7 +105,6 @@ $(function(){
 
 
 	$(window).scroll( function(){
-		alert(videoScrollTop);
 		var fromTop   = $(window).scrollTop();
 		
 		if (winWidth < 768){
@@ -113,7 +112,6 @@ $(function(){
 		}
 
 		toplineStyleControl(fromTop);
-		alert(videoScrollTop + ' + ' + fromTop);
 
 		if ( videoScrollTop - fromTop  <= startVideoRange && videoScrollTop - fromTop > 0 )
 		{
