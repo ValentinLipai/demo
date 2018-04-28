@@ -1,8 +1,5 @@
 
 
-window.onscroll = function(){
-	alert('scroll');
-}
 
 // узнаем ширину скроллбара
 var clientWidth      = $(window).innerWidth(),
@@ -108,6 +105,7 @@ $(function(){
 
 
 	$(window).scroll( function(){
+		alert('scroll');
 		var fromTop   = $(window).scrollTop();
 		
 		toplineStyleControl(fromTop);
