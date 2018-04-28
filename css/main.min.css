@@ -1107,9 +1107,9 @@ body{min-width:320px;position:relative;font-family:GothamPro,sans-serif;color:#0
 .contacts-table{padding:20px 15px}
 .xs-db{display:block;text-align:center}
 .facts{padding-bottom:50px}
-.mobile-menu__wrapper{min-width:1px;width:100%}
+.mobile-menu__wrapper{min-width:1px;padding-top:60px;width:100%}
+.mobile-menu-sub__list{margin-top:30px;margin-bottom:0}
 .mobile-menu-sub__list a{font-size:2rem}
-.mobile-menu__wrapper{padding-top:75px}
 .form-input,.formSection-form__btn{height:50px;line-height:50px}
 .popup-form-block-btn{height:50px;line-height:50px}
 }
