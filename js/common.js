@@ -105,7 +105,7 @@ $(function(){
 
 
 	$(window).scroll( function(){
-		alert('scroll');
+		alert(videoScrollTop);
 		var fromTop   = $(window).scrollTop();
 		
 		toplineStyleControl(fromTop);
